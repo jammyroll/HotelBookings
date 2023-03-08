@@ -8,7 +8,10 @@ const BookingForm = ({addBooking}) => {
         email: "",
         status: ""
     });
-
+    const CheckIn={
+        YES : "Yes",
+        NO : "No"
+    }
     const onChange = (event) => {
         const newFormData = Object.assign({}, formData);
         newFormData[event.target.name] = event.target.value;
@@ -37,7 +40,8 @@ const BookingForm = ({addBooking}) => {
                     type="text"
                     id='name'
                     name='name'
-                    value={formData.name}/>
+                    value={formData.name}
+                    required/>
             </div>
             <div>
                 <label htmlFor='email'>Email:</label>
@@ -46,19 +50,19 @@ const BookingForm = ({addBooking}) => {
                 type='text'
                 id='email'
                 name='email'
-                value={formData.email}/>  
+                value={formData.email}
+                required/>  
             </div>
             <div>
                 <label htmlFor='status'>Checked in:</label>
                 <select
                 onChange={onChange}
-                type=''
                 id='status'
                 name='status'
                 value={formData.status}>
                     <option value='' disabled>Choose...</option>
-                    <option value={formData.status}>Yes</option>
-                    <option value={formData.status}>No</option>
+                    <option value={CheckIn.YES}>Yes</option>
+                    <option value={CheckIn.NO}>No</option>
                 </select>
             </div>
             <input type='submit' value='Save' id='save'/>
