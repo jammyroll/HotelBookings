@@ -43,6 +43,8 @@ const create_Router = function (collection) {
         res.json({ status: 500, error: err });
       });
   });
+
+  return router
 };
 
 module.exports = create_Router;
