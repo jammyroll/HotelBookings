@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
+import BookingForm from '../components/BookingForm';
+import BookingList from '../components/BookingList';
+import { getBookings } from '../components/BookingService';
 
-// import bookingform
-// import bookinglist
-// import{getbookings}
 
 
 const BookingContainer = () => {
